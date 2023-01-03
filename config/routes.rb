@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :city_weathers
-  get '/searches', to:'city_weathers#last_10_searches'
+  resources :users, only: [:create]
+  resources :city_weathers, only: [:create]
+  get '/searches', to:'city_weathers#searches'
+  get '/unsubscribe',to: 'users#unsubscribe'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

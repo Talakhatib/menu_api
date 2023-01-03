@@ -9,8 +9,8 @@ class CityWeathersController < ApplicationController
         end
     end
 
-    def last_10_searches 
-        searches = CityWeather.arrange_desc.first(11)
+    def searches 
+        searches = CityWeather.arrange_desc.first(params[:number_of_searches]) # i did params because i need in the search method 10 seraches and in the api_data method 11 searches
         render json: searches
     end
 end

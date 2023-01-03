@@ -70,6 +70,7 @@ GEM
       msgpack (~> 1.2)
     builder (3.2.4)
     concurrent-ruby (1.1.10)
+    connection_pool (2.3.0)
     crass (1.0.6)
     date (3.3.3)
     debug (1.7.1)
@@ -108,6 +109,9 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.10-x64-mingw32)
       racc (~> 1.4)
+    nokogiri (1.13.10-x86_64-linux)
+      racc (~> 1.4)
+    pg (1.4.5)
     pg (1.4.5-x64-mingw32)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -144,9 +148,17 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redis-client (0.11.2)
+      connection_pool
     reline (0.3.2)
       io-console (~> 0.5)
+    sidekiq (7.0.2)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.11.0)
     sqlite3 (1.5.4-x64-mingw32)
+    sqlite3 (1.5.4-x86_64-linux)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -160,6 +172,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -168,6 +181,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
+  sidekiq
   sqlite3 (~> 1.4)
   tzinfo-data
 
