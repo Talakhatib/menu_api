@@ -10,4 +10,4 @@ Wind  Speed: <%= @wind_speed %>
 Wind Degree : <%= @wind_degree %>
 
 ===============================================
-To unsubscribe click on this link: 
+To unsubscribe click on this link: <%= link_to "Unsubscribe","http://localhost:3001/unsubscribe?user=#{@user.id}" %>
