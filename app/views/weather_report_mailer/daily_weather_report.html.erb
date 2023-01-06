@@ -11,6 +11,6 @@
   <br>
   <hr>
   <p>
-   To unsubscribe click on this link: <%= link_to "Unsubscribe", unsubscribe_url(user: @user) %>
+   To unsubscribe click on this link: <a href="http://localhost:3001/unsubscribe?user=<%= @user.id %>">Unsubscribe</a>
   </p>
 </body>

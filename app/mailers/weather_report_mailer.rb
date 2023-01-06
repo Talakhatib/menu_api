@@ -16,4 +16,9 @@ class WeatherReportMailer < ApplicationMailer
 
         mail to: @user.email , subject: "Daily Weather Report"
     end
+
+    def unsubscribe_email(user)
+        @user = user
+        mail to: @user.email , subject: "Unsubcribe to Daily Weather Report"
+    end
 end
